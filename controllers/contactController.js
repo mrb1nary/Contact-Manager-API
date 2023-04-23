@@ -7,8 +7,9 @@ const getContactById = (req, res) => {
 
 const createContact = (req, res) => {
   console.log("The request body", req.body);
-  if(!name || !email || !phone){
-    return res.status(400).json({message: "Please provide all the fields"})
+  const {name, email, phone} = req.body;
+  if (!name || !email || !phone) {
+    res.status(400).json({ message: "Please provide name, email and phone" });
   }
 };
 
