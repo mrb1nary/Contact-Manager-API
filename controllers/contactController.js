@@ -5,6 +5,8 @@ const getContacts = asyncHandler(async (req, res) => {
   const contacts = await Contact.find();
   res.status(200).json(contacts);
 });
+
+
 const getContactById = asyncHandler(async (req, res) => {
   const contact = await Contact.findById(req.params.id);
   if (!contact) {
